@@ -13,32 +13,39 @@
 <div role="main">
     <div class="row">
         <div class="col-12" id="outer-text-box"> Please Enter Customer information below
-            <!--<div class="input-row box">input form placeholder </div>-->
                 <div class="row">
-                    <form class="box-sm sky">
+                    <div class="box-sm sky">
                         <textarea placeholder="Type your message here...." rows="4" cols="50" class="neutral"></textarea>
-                    </form>
-                    <div class="output-entry-box" class="col-3 white">
-                        Customer: Dave Dave<br>
-                        Phone Number: 777-777-7777
-                        Looking For:
-                        <select>
-                            <option> Supplement Capsule </option>
+                        <select id="product-dropdown" class="col-12">
+                            <option class="col3"> Supplement </option>
                             <option> Fish Oil </option>
                             <option> Vitamin D3 </option>
                             <option> Vitamin B12 Liquid drops </option>
+                            <option>misc</option>
                         </select>
+                        <form>
+                            <input type="submit">
+                        </form>
                     </div>
-                    <div class="output-entry-box" class="col-3 white">output placholder</div>
-                    <div class="output-entry-box" class="col-3 white">output placholder</div>
-                    <div class="output-entry-box" class="col-3 white">output placholder</div>
+                    <div class="output-entry-box col-3 white">
+                        Customer: Dave Dave
+                        Phone: 777-777-7777
+                        Looking For
+                        Sommething something notes go here
+                    </div>
+
+                    <div class="output-entry-box col-3 white">output placholder example</div>
+                    <div class="output-entry-box col-3 white">output placholder example</div>
+                    <div class="output-entry-box col-3 white">output placholder example</div>
                 </div>
-            <form>
-                <input type="submit">
-            </form>
+
         </div>
     <div>
 </div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
 <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
