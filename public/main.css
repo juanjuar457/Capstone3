@@ -1,0 +1,77 @@
+* {
+    font-family: 'Signika';
+    /*font-size: 22px;*/
+}
+
+.output-entry-box {
+    height: 200px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#outer-text-box {
+    text-align: center;
+}
+
+#bottom-subit-btn {
+    text-align: center;
+}
+
+#app-header {
+    text-align: center;
+    font-size: 42px;
+}
+
+main {
+    padding-top: 100px;
+}
+
+main.row {
+    margin-bottom: 20px;
+}
+
+/*.box {*/
+    /*height: 200px;*/
+    /*text-align: center;*/
+    /*padding-top: 30px;*/
+/*}*/
+
+.box-sm {
+    height: 200px;
+    text-align: center;
+    padding-top: 10px;
+}
+.box {
+    height: 400px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+body {
+    background-color: #EDEDED;
+}
+
+.sky {
+    background-color: #CAEBF2;
+}
+
+.carbon {
+    background-color: #A9A9A9;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.neutral {
+    background-color: #EDEDED;
+}
+
+.watermelon {
+    background-color: #FF3B3F;
+}
+
+.white {
+    background-color: #fff;
+}
