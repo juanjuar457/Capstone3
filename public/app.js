@@ -1,5 +1,7 @@
 console.log('hello from js');
-state = {
 
-}
+var state = {
+    customerReserveInfo: []
+};
+
 

@@ -3,6 +3,15 @@
     /*font-size: 22px;*/
 }
 
+.customer {
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+form {
+    text-align: center;
+}
+
 #product-dropdown {
     display: block;
 }
@@ -45,22 +54,14 @@ main.row {
 /*}*/
 
 .box-sm {
-    height: 200px;
     text-align: center;
-    padding-top: 10px;
-}
-.box {
-    height: 400px;
-    text-align: center;
-    padding-top: 30px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #CAEBF2;
 }
 
 body {
     background-color: #EDEDED;
-}
-
-.sky {
-    background-color: #CAEBF2;
 }
 
 .carbon {
