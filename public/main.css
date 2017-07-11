@@ -3,6 +3,10 @@
     /*font-size: 22px;*/
 }
 
+.input-row {
+    padding: 5px;
+}
+
 .customer {
     padding-bottom: 10px;
     font-weight: bold;
@@ -30,8 +34,8 @@ form {
     text-align: center;
 }
 
-#bottom-subit-btn {
-    text-align: center;
+#mainSubmitBtn{
+    /*text-align: center;*/
 }
 
 #app-header {
