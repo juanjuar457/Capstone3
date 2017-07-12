@@ -15,8 +15,9 @@ app.use(express.static('public')); // for serving static files in express
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //>>>>>>>>>ENDPOINTS <<<<<<<<<<<<<<<<<<<<<<<
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-
+app.get('/customers', routes.getCustomers);
+app.post('/savecustomer', routes.postCustomer);
+app.delete('/deletecustomer/:id', routes.deleteCustomer);
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //>>>>>>>>>RUN/CLOSE SERVER <<<<<<<<<<<<<<<<
@@ -32,15 +33,15 @@ function runServer(databaseUrl=DATABASE_URL, port=PORT) {
                 return reject(err);
             }
             server = app.listen(port, () => {
-                console.log(`Order For Later is listening on port ${port}`);
+                console.log(`OTC Customer Reserve Helper ${port}`);
     resolve();
 })
 .on('error', err => {
         mongoose.disconnect();
     reject(err);
-});
-});
-});
+            });
+        });
+    });
 }
 
 //closeServer returns promise, we use for testing later...
@@ -53,15 +54,15 @@ function closeServer() {
             return reject(err);
         }
         resolve();
-});
-});
-});
+            });
+        });
+    });
 }
 
 // if server.js is called directly (aka, with `node server.js`), this block
 // runs. but we also export the runServer command so other code (for instance, test code) can start the server as needed.
 if (require.main === module) {
     runServer().catch(err => console.error(err));
-};
+}
 
 module.exports = {runServer, app, closeServer};
