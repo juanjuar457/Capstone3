@@ -51,17 +51,17 @@ main.row {
     margin-bottom: 20px;
 }
 
-/*.box {*/
-    /*height: 200px;*/
-    /*text-align: center;*/
-    /*padding-top: 30px;*/
-/*}*/
-
+.bigcol {
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+    width: 80%;
+}
 .box-sm {
     text-align: center;
     padding: 25px;
     border-radius: 25px;
     background-color: #CAEBF2;
+    margin: 0 auto;
 }
 
 body {

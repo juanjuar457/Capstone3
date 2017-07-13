@@ -41,8 +41,8 @@
      * Half a gutter is 10px, 10/960 (context) = 1.041666%
      *
      */
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
+    /*padding-left: 0.25%;*/
+    /*padding-right: 0.25%;*/
 }
 
 /* Mobile defaults */
@@ -60,7 +60,7 @@
 
     /* 4 columns, 4/12 in % */
     .col-4 {
-        width: 33.33%;
+        width: 27%;
     }
 
     /* 6 columns 6/12 in % */

@@ -8,11 +8,11 @@ module.exports = {
             .findByIdAndRemove(req.params.id)
             .exec()
             .then(() => {
-                res.status(204).json({ message: 'success' });
+                res.status(200).json("");
             })
             .catch(err => {
                 console.error(err);
-                res.status(500).json({ error: 'Server error' });
+                res.status(500).json("");
             });
     },
     getCustomer: (req, res) => {
