@@ -30,9 +30,9 @@ module.exports = {
     getCustomers: (req, res) => {
         Customer
             .find()
-            .limit(100)
+            .limit(1000)
             .exec()
-            .then(customer => {
+            .then(customers => {
                 res.json({
                     customers: customers.map(
                         (customer) => customer.apiRepr())
@@ -41,7 +41,7 @@ module.exports = {
             .catch(
                 err => {
                     console.error(err);
-                    res.status(500).json({ message: 'Internal Server error' });
+                    res.status(500).json('fuk yo server');
                 });
     },
     postCustomer: (req, res) => {
@@ -71,4 +71,21 @@ module.exports = {
     }
 };
 
-
+//
+// getMaterials: (req, res) => {
+//     Material
+//         .find()
+//         .limit(1000)
+//         .exec()
+//         .then(materials => {
+//             res.json({
+//                 materials: materials.map(
+//                     (material) => material.apiRepr())
+//             });
+//         })
+//         .catch(
+//             err => {
+//                 console.error(err);
+//                 res.status(500).json({ message: 'Internal Server error' });
+//             });
+// },

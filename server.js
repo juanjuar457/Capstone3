@@ -16,6 +16,7 @@ app.use(express.static('public')); // for serving static files in express
 //>>>>>>>>>ENDPOINTS <<<<<<<<<<<<<<<<<<<<<<<
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 app.get('/customers', routes.getCustomers);
+
 app.post('/savecustomer', routes.postCustomer);
 app.get('/customer/:id', routes.getCustomer);
 app.delete('/deletecustomer/:id', routes.deleteCustomer);

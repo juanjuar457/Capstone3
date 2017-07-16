@@ -3,6 +3,14 @@
     /*font-size: 22px;*/
 }
 
+#del-button {
+    background-image: url("delete.png");
+    display: block;
+    /*local file source*/
+}
+
+
+
 .input-row {
     padding: 5px;
 }

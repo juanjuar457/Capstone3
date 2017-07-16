@@ -6,9 +6,20 @@ var state = {
 
 // ********STATE RENDER
 
-// function renderCustomerInfo() {
-//     var dom = $('#')
-// }
+populateRequestedCustomerReserveInfo(); //long af;
+
+//initial GET
+function populateRequestedCustomerReserveInfo() {
+    $.ajax({
+        type: "GET",
+        url: "/customers",
+        dataType: "json",
+        success: function (data) {
+            state.requestedCustomerReserveInfo = data.customers;
+            renderCustomer();
+        }
+    })
+}
 
 
 
@@ -44,21 +55,70 @@ $('#mainSubmitBtn').click(function addCustomer(event) {
 //     console.log('got to renderCustomer Render ME! ');
 //     //got to render
 // }
-
-function renderCustomer() {
-    console.log('got to real render customer');
-    var dom = $('#outputCustomer');
-    dom.empty();
-    console.log(state.requestedCustomerReserveInfo);
-    for (i = 0; i < state.requestedCustomerReserveInfo.length; i++) {
-        dom.append('<div class="output-entry-box col-4 white ">' + state.requestedCustomerReserveInfo[i].customerName + '<div class="customer">' + state.requestedCustomerReserveInfo[i].customerPhone + '<br>'+
-            state.requestedCustomerReserveInfo[i].customerAddress + '</div>' + state.requestedCustomerReserveInfo[i].itemName + '<br>' + state.requestedCustomerReserveInfo[i].textArea +
-            '</div>');
-    }
+//
+function deleteCustomerClick(event) {
+    event.originalEvent.cancelBubble = true;
+    event.originalEvent.stopPropagation();
+    // evet.stopPropagation();
+    console.log('got through event prop stuff');
+    $.ajax({
+        id: event.data.id,
+        url: '/deletecustomer/' + event.data.id,
+        type: 'DELETE',
+        success: function () {
+            for (i = 0; i < state.requestedCustomerReserveInfo.length; i++) {
+                if (event.data.id === state.requestedCustomerReserveInfo[i].id) {
+                    return state.requestedCustomerReserveInfo.splice(i, 1)
+                    break;
+                }
+            }
+            renderCustomer();
+        }
+    });
 }
 
+function renderCustomer() {
+    var dom = $('#outputCustomer');
+    dom.empty();
+    for (i = 0; i < state.requestedCustomerReserveInfo.length; i++) {
+        dom.append('<div class="output-entry-box col-4 white ">' + state.requestedCustomerReserveInfo[i].customerName +
+            '<div class="customer">' + state.requestedCustomerReserveInfo[i].customerPhone + '<br>'+
+            state.requestedCustomerReserveInfo[i].customerAddress + '</div>' + state.requestedCustomerReserveInfo[i].itemName + '<br>' +
+            state.requestedCustomerReserveInfo[i].textArea + '<div>' +
+            '<button type="submit"><img id="del-button' + state.requestedCustomerReserveInfo[i].id + '"src="delete.png"></button>' + '<div>' +
+            '</div>');
+        $('#del-button' + state.requestedCustomerReserveInfo[i].id).click({ event: this, id: state.requestedCustomerReserveInfo[i].id }, deleteCustomerClick)
+    }
+}
+// '<button> <img id="del-button" src="delete.png"> </button>'
 
 
+// <button>
+// <img id="del-button" src="delete.png">
+//     </button>
+//hook into the del-button id, vs making one, render the del with each cell, wipe the ones on the DB
+//make the landing.
+// //
+// function renderMaterial() {
+//     var dom = $('#requestedMaterials');
+//     dom.empty(); //flushes out material
+//     for (i = 0; i < state.requestedMaterials.length; i++) {
+//         dom.append('<div id="R' + state.requestedMaterials[i].id + '" class="row exampleEntry ' + (state.requestedMaterials[i].onBackOrder ? "onBackOrder" : "") +
+//             '"><div class="col-md-2">' + state.requestedMaterials[i].vendor + '</div>' +
+//             '<div class="col-md-1">' + state.requestedMaterials[i].quantity + '</div>' +
+//             '<div class="col-md-2">' + state.requestedMaterials[i].productName + '</div>' +
+//             '<div class="col-md-2">' + state.requestedMaterials[i].catalogNumber + '</div>' +
+//             '<div class="col-md-2">' + state.requestedMaterials[i].unitSize + '</div>' +
+//             '<div class="col-md-2">' + getUnitKey(state.requestedMaterials[i].units) + '</div>' +
+//             '<div class="col-md-1"><i id="D' + state.requestedMaterials[i].id + '" class="glyphicon glyphicon-remove pull-right"></i></div>' +
+//             '</div>');
+//         $('#D' + state.requestedMaterials[i].id).click({ event: this, id: state.requestedMaterials[i].id }, deleteMaterialClick);
+//         $('#R' + state.requestedMaterials[i].id).click({ event: this, id: state.requestedMaterials[i].id }, setBackOrderClick);
+//     }
+// }
+
+
+//Todo: LANDING PAGE with link! and desc
 // Todo: clear button!!?
 //Todo: consolidate class colors in css!!!
 //Todo: set up default form, so no empty boxes can be put in.
