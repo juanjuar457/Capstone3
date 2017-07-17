@@ -10,6 +10,7 @@ populateRequestedCustomerReserveInfo(); //long af;
 
 //initial GET
 function populateRequestedCustomerReserveInfo() {
+    $('#formError').hide(); //so it starts hidden..
     $.ajax({
         type: "GET",
         url: "/customers",
@@ -28,27 +29,33 @@ function populateRequestedCustomerReserveInfo() {
 
 //.submit on the jquery selector didn't work, b/c the main id needs to be on the form looks like..
 
-$('#mainSubmitBtn').click(function addCustomer(event) {
+$('#mainSubmitBtn').submit(function addCustomer(event) {
     event.preventDefault();
-        let customer = {
-            customerName: $('#customerName').val(),
-            customerPhone: $('#customerPhone').val(),
-            customerAddress: $('#customerAddress').val(),
-            itemName: $('#itemName').val(),
-            textArea: $('#textArea').val()
-        };
+    $('#formError').hide();
+    let customer = {
+        customerName: $('#customerName').val(),
+        customerPhone: $('#customerPhone').val(),
+        customerAddress: $('#customerAddress').val(),
+        itemName: $('#itemName').val(),
+        textArea: $('#textArea').val()
+    };
+    if(!customer.itemName && !customer.textArea){
+        $('#formError').show()
+    }
+    else(
         $.ajax({
-        type: "POST",
-        url: '/savecustomer',
-        data: JSON.stringify(customer),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (data) {
-            customer.id = data.id;
-            state.requestedCustomerReserveInfo.push(customer);
-            renderCustomer();
-        }
-    });
+            type: "POST",
+            url: '/savecustomer',
+            data: JSON.stringify(customer),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                customer.id = data.id;
+                state.requestedCustomerReserveInfo.push(customer);
+                renderCustomer();
+            }
+        })
+    )
 });
 
 // function renderCustomer() {
@@ -59,11 +66,9 @@ $('#mainSubmitBtn').click(function addCustomer(event) {
 function deleteCustomerClick(event) {
     event.originalEvent.cancelBubble = true;
     event.originalEvent.stopPropagation();
-    // evet.stopPropagation();
-    console.log('got through event prop stuff');
     $.ajax({
         id: event.data.id,
-        url: '/deletecustomer/' + event.data.id,
+        url: '/deletecustomer/' + event.currentTarget.id,
         type: 'DELETE',
         success: function () {
             for (i = 0; i < state.requestedCustomerReserveInfo.length; i++) {
@@ -81,13 +86,12 @@ function renderCustomer() {
     var dom = $('#outputCustomer');
     dom.empty();
     for (i = 0; i < state.requestedCustomerReserveInfo.length; i++) {
-        dom.append('<div class="output-entry-box col-4 white ">' + state.requestedCustomerReserveInfo[i].customerName +
+        dom.append('<div class="output-entry-box col-4 white "><div class="row"><button id="' + state.requestedCustomerReserveInfo[i].id + '" class="delBtn" type="submit"><img src="delete.png"></button></div><h4>'
+            + state.requestedCustomerReserveInfo[i].customerName + '</h4>'  +
             '<div class="customer">' + state.requestedCustomerReserveInfo[i].customerPhone + '<br>'+
-            state.requestedCustomerReserveInfo[i].customerAddress + '</div>' + state.requestedCustomerReserveInfo[i].itemName + '<br>' +
-            state.requestedCustomerReserveInfo[i].textArea + '<div>' +
-            '<button type="submit"><img id="del-button' + state.requestedCustomerReserveInfo[i].id + '"src="delete.png"></button>' + '<div>' +
-            '</div>');
-        $('#del-button' + state.requestedCustomerReserveInfo[i].id).click({ event: this, id: state.requestedCustomerReserveInfo[i].id }, deleteCustomerClick)
+            state.requestedCustomerReserveInfo[i].customerAddress + '</div><h3>' + state.requestedCustomerReserveInfo[i].itemName + '</h3>' +
+            state.requestedCustomerReserveInfo[i].textArea + '</div>');
+        $('#' + state.requestedCustomerReserveInfo[i].id).click({ event: this, id: state.requestedCustomerReserveInfo[i].id }, deleteCustomerClick)
     }
 }
 // '<button> <img id="del-button" src="delete.png"> </button>'

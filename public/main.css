@@ -2,14 +2,35 @@
     font-family: 'Signika';
     /*font-size: 22px;*/
 }
-
-#del-button {
-    background-image: url("delete.png");
-    display: block;
-    /*local file source*/
+textarea {
+    background-color: yellow;
 }
 
+#formError div{
+    border: 2px solid #DC143C;
+    background-color: lightpink;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 5px 10px;
+    font-size: 10px;
+}
 
+.delBtn {
+    border: none;
+    background-color: #fff;
+    float: right;
+}
+
+h3, h4 {
+    padding: 0;
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+h4 {
+    display: inline-block;
+}
 
 .input-row {
     padding: 5px;
@@ -24,26 +45,15 @@ form {
     text-align: center;
 }
 
-#product-dropdown {
-    display: block;
-}
-
 .output-entry-box {
-    height: 200px;
     text-align: center;
-    padding-top: 30px;
     border-radius: 25px;
     border: 4px solid #a1a1a1;
     padding: 10px;
-    margin: 25px;
 }
 
 #outer-text-box {
     text-align: center;
-}
-
-#mainSubmitBtn{
-    /*text-align: center;*/
 }
 
 #app-header {
@@ -59,21 +69,16 @@ main.row {
     margin-bottom: 20px;
 }
 
-.bigcol {
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-    width: 80%;
-}
 .box-sm {
     text-align: center;
-    padding: 25px;
+    /*padding: 25px;*/
     border-radius: 25px;
-    background-color: #CAEBF2;
-    margin: 0 auto;
+    background-color: #EDEDED;
+    border: 2px solid #a1a1a1;
 }
 
 body {
-    background-color: #EDEDED;
+    background-color: #fff;
 }
 
 .carbon {
@@ -81,8 +86,8 @@ body {
 }
 
 .black {
-    background-color: black;
-    color: white;
+    background-color: #000;
+    color: #fff;
 }
 
 .neutral {

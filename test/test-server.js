@@ -96,7 +96,6 @@ describe('Customer API resource', function () {
                     return Customer.findById(customer.id).exec();
                 })
                 .then(function (_customer) {
-
                     should.not.exist(_customer);
                 })
         })

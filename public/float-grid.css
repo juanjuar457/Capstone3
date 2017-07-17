@@ -48,6 +48,7 @@
 /* Mobile defaults */
 .col-3, .col-4, .col-6, .col-10, .col-12 {
     width: 100%;
+    margin: 10px 0;
 }
 
 
@@ -56,25 +57,29 @@
     /* 3 columns, 3/12 in % */
     .col-3 {
         width: 25%;
+        margin: 10px 2.325%;
     }
 
     /* 4 columns, 4/12 in % */
     .col-4 {
         width: 27%;
+        margin: 10px 3.1%;
     }
 
     /* 6 columns 6/12 in % */
     .col-6 {
         width: 50%;
+        margin: 10px 10px;
     }
 
     .col-10 {
-        width: 84%;
-        margin: 0 8%;
+        width: 83.33%;
+        margin: 10px 8.5%;
     }
 
     /* 12 columns, 12/12 */
     .col-12 {
         width: 100%;
+        margin: 10px 20px;
     }
 }

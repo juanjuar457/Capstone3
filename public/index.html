@@ -5,67 +5,43 @@
     <title>Capstone 3</title>
     <link rel="stylesheet" type="text/css" href="float-grid.css">
     <link rel="stylesheet" type="text/css" href="main.css">
-
     <link href='https://fonts.googleapis.com/css?family=Signika' rel='stylesheet'>
 </head>
 <body>
 <h1 id="app-header">OTC CUSTOMER RESERVE HELPER</h1>
-<div role="main">
-    <div class="row">
-        <div class="col-12" id="outer-text-box">
-            <div clas="row">
-                <div class="box-sm bigcol">
-                            <form>
-                            <div class="row">
-                                <h4 class="col-10">Please Enter Customer information below</h4>
-                            </div>
-                            <div class="row input-row">
-                                <input id="customerName" type="text" placeholder="Customer Name" class="col-10">
-                            </div>
-                            <div class="row input-row">
-                                <input id="customerPhone" type="text" placeholder="Customer Phone" class="col-10">
-                            </div>
-                            <div class="row input-row">
-                                <input id="customerAddress" type="text" placeholder="Customer Address" class="col-10">
-                            </div>
-                            <div class="row input-row">
-                                <input id="itemName" type="text" placeholder="Item Name" class="col-10">
-                            </div>
-                            <div class="row input-row">
-                                <textarea id="textArea" placeholder="Type customer notes here" rows="4" class="neutral col-10"></textarea>
-                            </div>
-                            <div class="row input-row">
-                                <div  class="col-10"></div>
-                                <button type="submit" id="mainSubmitBtn" >SUBMIT</button>
-                            </div>
-                            </form>
+<div class="row">
+    <div class="box-sm col-10">
+                <form id="mainSubmitBtn">
+                <div class="row">
+                    <h4 class="col-10">Please Enter Customer information below</h4>
                 </div>
-            </div>
-                        <div class="row">
-                            <div class="output-entry-box col-3 white">
-                                <div class="customer">
-                                    Dave Dave <br>
-                                    777-777-7777 <br>
-                                    1234 main street
-                                </div>
-                                Looking For
-                                Sommething something notes go here
-                            </div>
-                            <div id="outputCustomer">
-                                <div class="output-entry-box col-3 white">output placholder example</div>
-                                <div class="output-entry-box col-3 white">output placholder example</div>
-                                <div class="output-entry-box col-3 white">output placholder example</div>
-                            </div>
+                    <div id="formError" class="row input-row">
+                        <div class="col-10">
+                            ERROR! Must Have Item Name or Item Description...
                         </div>
-                <!--<div class="row">-->
-                        <!--<div id="requestedCustomerInfo" class="output-entry-box col-4 white">-->
-                            <!--<button>-->
-                                <!--<img id="del-button" src="delete.png">-->
-                            <!--</button>-->
-                        <!--</div>-->
-                <!--</div>-->
-            </div>
-      </div>
+                    </div>
+                <div class="row input-row">
+                    <input id="customerName" type="text" placeholder="Customer Name" class="col-10" required>
+                </div>
+                <div class="row input-row">
+                    <input id="customerPhone" type="tel" placeholder="Customer Phone" class="col-10" required>
+                </div>
+                <div class="row input-row">
+                    <input id="customerAddress" type="text" placeholder="Customer Address" class="col-10">
+                </div>
+                <div class="row input-row">
+                    <input id="itemName" type="text" placeholder="Item Name" class="col-10">
+                </div>
+                <div class="row input-row">
+                    <textarea id="textArea" placeholder="Type customer notes here" rows="4" class="neutral col-10"></textarea>
+                </div>
+                <div class="row input-row">
+                    <button class="col-10" type="submit">SUBMIT</button>
+                </div>
+                </form>
+        </div>
+</div>
+<div id="outputCustomer" class="row">
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
