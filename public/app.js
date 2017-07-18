@@ -105,4 +105,4 @@ function renderCustomer() {
 //Todo: ajax call to DEL and GET ***
 //Todo: set DEL button w/ image (similar to cap1 back and forward arrows)**
 //Todo: set up mongoDB + mlab and set up config file with the right credentials***
-//Todo: Random fixes: 7/18:  
+//Todo: Random fixes: 7/18:
