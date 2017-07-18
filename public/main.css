@@ -2,6 +2,37 @@
     font-family: 'Signika';
     /*font-size: 22px;*/
 }
+/* unvisited link */
+a:link {
+    color: #76323F;
+}
+
+/* visited link */
+a:visited {
+    color: #565656;
+}
+
+/* mouse over link */
+a:hover {
+    color: #C09F80;
+}
+
+/* selected link */
+a:active {
+    color: #D7CEC7;
+}
+
+
+
+#landingLink {
+    display: inline-block;
+    font-size: 18px;
+    /*margin-right: 20px;*/
+    margin-left: 80px;
+    text-decoration: none;
+    line-height: 40px;
+    vertical-align: middle;
+}
 
 #enterInfoText {
     color: #fff;
@@ -106,15 +137,3 @@ body {
     background-color: #D7CEC7;
 }
 
-.carbon {
-    background-color: #A9A9A9;
-}
-
-.black {
-    background-color: #000;
-    color: #fff;
-}
-
-.watermelon {
-    background-color: #FF3B3F;
-}

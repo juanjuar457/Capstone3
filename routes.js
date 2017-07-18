@@ -70,22 +70,3 @@ module.exports = {
             });
     }
 };
-
-//
-// getMaterials: (req, res) => {
-//     Material
-//         .find()
-//         .limit(1000)
-//         .exec()
-//         .then(materials => {
-//             res.json({
-//                 materials: materials.map(
-//                     (material) => material.apiRepr())
-//             });
-//         })
-//         .catch(
-//             err => {
-//                 console.error(err);
-//                 res.status(500).json({ message: 'Internal Server error' });
-//             });
-// },
