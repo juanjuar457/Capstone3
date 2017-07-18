@@ -2,8 +2,36 @@
     font-family: 'Signika';
     /*font-size: 22px;*/
 }
-textarea {
-    background-color: yellow;
+
+#enterInfoText {
+    color: #fff;
+}
+
+#otcHeader {
+    background-color: #fff;
+    width: auto;
+    margin-top: 0;
+    /*color: #76323F;*/
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#otcFooter {
+    background-color: #fff;
+    width: auto;
+    margin-top: 0;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+    left: 0;
+    bottom: 0;
+}
+
+#customerName, #itemName, #customerAddress, #customerPhone, #textArea {
+    background-color: #D7CEC7;
+    padding-bottom: 5px;
+    height: auto;
 }
 
 #formError div{
@@ -13,12 +41,12 @@ textarea {
     margin-bottom: 10px;
     text-align: left;
     padding: 5px 10px;
-    font-size: 10px;
+    font-size: 20px;
 }
 
 .delBtn {
     border: none;
-    background-color: #fff;
+    background-color: #C09F80;
     float: right;
 }
 
@@ -48,18 +76,15 @@ form {
 .output-entry-box {
     text-align: center;
     border-radius: 25px;
-    border: 4px solid #a1a1a1;
+    border: 4px solid #565656;
     padding: 10px;
+    background-color: #C09F80;
 }
 
 #outer-text-box {
     text-align: center;
 }
 
-#app-header {
-    text-align: center;
-    font-size: 42px;
-}
 
 main {
     padding-top: 100px;
@@ -73,12 +98,12 @@ main.row {
     text-align: center;
     /*padding: 25px;*/
     border-radius: 25px;
-    background-color: #EDEDED;
-    border: 2px solid #a1a1a1;
+    background-color: #565656;
+    border: 2px solid #dab997;
 }
 
 body {
-    background-color: #fff;
+    background-color: #D7CEC7;
 }
 
 .carbon {
@@ -90,14 +115,6 @@ body {
     color: #fff;
 }
 
-.neutral {
-    background-color: #EDEDED;
-}
-
 .watermelon {
     background-color: #FF3B3F;
-}
-
-.white {
-    background-color: #fff;
 }

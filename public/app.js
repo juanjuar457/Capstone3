@@ -23,6 +23,20 @@ function populateRequestedCustomerReserveInfo() {
 }
 
 
+$("form").trigger("reset");
+
+// $('#clearBtn).submit(function clearForm(event){
+//     event.preventDefault();
+//     let customer = {
+//         customerName: "",
+//         customerPhone: "",
+//         customerAddress: "",
+//         itemName: "",
+//         textArea: ""
+//     }
+// });
+
+
 
 // ********EVENT HANDLERS
 //will also be your POST!!
