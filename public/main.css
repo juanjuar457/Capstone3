@@ -22,7 +22,16 @@ a:active {
     color: #D7CEC7;
 }
 
-
+.otcFooter {
+    background-color: #000;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: #FFF;
+    font-weight: 600;
+}
 
 #landingLink {
     display: inline-block;
@@ -48,16 +57,16 @@ a:active {
     margin-bottom: 10px;
 }
 
-#otcFooter {
-    background-color: #fff;
-    width: auto;
-    margin-top: 0;
-    font-size: 22px;
-    text-align: center;
-    font-weight: 600;
-    left: 0;
-    bottom: 0;
-}
+/*#otcFooter {*/
+    /*background-color: #fff;*/
+    /*width: auto;*/
+    /*margin-top: 0;*/
+    /*font-size: 22px;*/
+    /*text-align: center;*/
+    /*font-weight: 600;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+/*}*/
 
 #customerName, #itemName, #customerAddress, #customerPhone, #textArea {
     background-color: #D7CEC7;
