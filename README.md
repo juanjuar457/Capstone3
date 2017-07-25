@@ -19,5 +19,5 @@ npm install
 then run npm start to run the app on a localhost:8080 
 
 
-live heroku link: https://dashboard.heroku.com/apps/still-mountain-85787 
+live heroku link: https://still-mountain-85787.herokuapp.com/ 
 
