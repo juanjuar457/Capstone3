@@ -56,7 +56,7 @@ a:active {
 
 #otcHeader {
     background-color: #fff;
-    width: auto;
+    width: 100%;
     margin-top: 0;
     /*color: #76323F;*/
     font-size: 40px;
@@ -112,6 +112,11 @@ h4 {
     padding: 5px;
 }
 
+input, textarea {
+    padding-left: 10px;
+}
+
+
 .customer {
     padding-bottom: 10px;
     font-weight: bold;
@@ -152,5 +157,7 @@ main.row {
 
 body {
     background-color: #D7CEC7;
+    padding: 0;
+    margin: 0;
 }
 
