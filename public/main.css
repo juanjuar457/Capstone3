@@ -73,7 +73,7 @@ a:active {
     font-weight: 600;
     left: 0;
     bottom: 0;
-    position: fixed;
+    /*position: fixed;*/
 }
 
 #customerName, #itemName, #customerAddress, #customerPhone, #textArea {
